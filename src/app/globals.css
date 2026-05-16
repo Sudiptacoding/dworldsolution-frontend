@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@keyframes pulse-custom {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) translate(-50%, -50%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 1.5s infinite ease-in-out;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* global  */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #000000;
+  overflow: hidden;
+  filter: url("#goo");
+}
+
+.hooksMain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ball {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ff6d6d;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff6d6d;
+  will-change: transform;
+  touch-action: none;
+  user-select: none;
+}
+
+.aspect-ratio-16-9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 9/16 ratio */
+}
+
+.aspect-ratio-16-9 > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@layer components {
+  .inner-blue-line {
+    @apply w-[1px] rounded-[20px] bg-[#273fb7] shadow-[0_0_10px_1px_#2c3870];
+    height: 100px;
+    position: sticky;
+    top: 25%;
+    transition: height 0.3s ease;
+  }
+}
+
+
+/* globals.css */
+
+/* Keyframes - এই অ্যানিমেশনটি উপাদানকে অদৃশ্য (opacity 0) থেকে দৃশ্যমান (opacity 1) করবে */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); /* হালকা ছোট থেকে শুরু হবে */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* কাস্টম ক্লাস 1: 0.5 সেকেন্ড ডিলে হবে */
+.animate-circle-1 {
+  animation: fadeInScale 1s ease-out forwards;
+  animation-delay: 0.2s; /* প্রথম বৃত্তটি 0.2 সেকেন্ড পর শুরু হবে */
+}
+
+/* কাস্টম ক্লাস 2: 1.0 সেকেন্ড ডিলে হবে */
+.animate-circle-2 {
+  animation: fadeInScale 0.8s ease-out forwards;
+  animation-delay: 1.5s; /* দ্বিতীয় বৃত্তটি 0.8 সেকেন্ড পর শুরু হবে */
+}
+
+/* কাস্টম ক্লাস 3: 1.5 সেকেন্ড ডিলে হবে */
+.animate-circle-3 {
+  animation: fadeInScale 0.8s ease-out forwards;
+  animation-delay: 2s; /* তৃতীয় বৃত্তটি 1.4 সেকেন্ড পর শুরু হবে */
+}
+
+
+
+/* globals.css */
+
+/*
+  হোভার করার সময় ট্রানজিশন যোগ করা হচ্ছে।
+  এটি নিশ্চিত করে যে হোভার ইন (hover in) এবং হোভার আউট (hover out) দুটোই মসৃণ হবে।
+*/
+.team-image-wrapper {
+  /* হোভার করার সময় 'transform' এবং 'left' পরিবর্তন হবে 0.3 সেকেন্ডে */
+  transition: transform 0.3s ease-out, left 0.3s ease-out;
+}
+
+/*
+  মূল কন্টেইনারটির উপর হোভার হলে ভেতরের ইমেজগুলো সরানোর লজিক।
+  nth-child() ব্যবহার করে প্রতিটি ইমেজকে আলাদাভাবে সরানো হচ্ছে।
+*/
+.hover-spread-container:hover .team-image-wrapper:nth-child(1) {
+    /* 1st image: বাম দিকে সরাও */
+    transform: translateX(-15px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(2) {
+    /* 2nd image: হালকা বাম দিকে সরাও */
+    transform: translateX(-5px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(3) {
+    /* 3rd image: সামান্য সরাও */
+    transform: translateX(5px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(4) {
+    /* 4th image: হালকা ডান দিকে সরাও */
+    transform: translateX(15px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(5) {
+    /* 5th image: ডান দিকে সরাও */
+    transform: translateX(25px);
+}
+
+/*
+  যদি আপনার ৫টির বেশি ইমেজ থাকে, তবে বাকি ইমেজগুলোর জন্য এখানে nth-child()
+  ব্যবহার করে transform: translateX() যোগ করতে হবে।
+*/
