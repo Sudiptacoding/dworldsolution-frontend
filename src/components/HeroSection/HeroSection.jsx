@@ -166,10 +166,10 @@ import useHeaderVideo from "@/hook/useHeaderVideo";
 import { useState } from "react";
 
 const clientImages = [
-  "https://framerusercontent.com/images/58IbyFPDZt1MzyLggmMD3PrJsQ.png",
-  "https://framerusercontent.com/images/3ljYEqohtI2b06DjjDXdGayh0jU.jpg",
-  "https://framerusercontent.com/images/f1DS8SjePPfrm8I7S7Aw6vU8tPs.png",
-  "https://framerusercontent.com/images/eypxGLbLsyxFpirkXlVe32e04Z8.png",
+  "/image/logo1.png",
+  "/image/logo3.png",
+  "/image/logo2.png",
+  "/image/logo4.png",
 ];
 
 export default function HeroSection() {
@@ -222,10 +222,10 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="max-w-2xl mx-auto text-center"
+              className="max-w-3xl mx-auto text-center"
             >
               <p className="mt-4 text-lg text-gray-600">
-                Launch a client-winning editing portfolio website in &lt; 5 minutes
+               We support entrepreneurs and businesses with structured organic content workflows focused on clarity, consistency, and lead support. When raw footage isn’t available, video content can be created using AI-assisted workflows and refined through professional editing.
               </p>
             </motion.div>
             <motion.div
@@ -273,7 +273,7 @@ export default function HeroSection() {
               className="max-w-2xl mx-auto text-center"
             >
               <p className="mt-2 text-sm text-gray-500">
-                Used by 10,000+ editors worldwide.
+                Trusted by 200+ global entrepreneurs and businesses
               </p>
             </motion.div>
             {/* Button */}
@@ -296,7 +296,7 @@ export default function HeroSection() {
           </div>
 
           {
-            !headerVideo ?      <motion.div
+            headerVideo ?      <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}

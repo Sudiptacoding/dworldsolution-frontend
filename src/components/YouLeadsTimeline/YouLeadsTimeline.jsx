@@ -164,10 +164,10 @@ function YouLeadsTimeline() {
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Ideas into strategy</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">From Ideas to Strategy</h3>
             </div>
             <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
-              We take your concepts and align them with market trends and audience needs.
+             We review your ideas carefully, using our experience and established market practices as reference points.
             </p>
           </div>
           <div
@@ -267,11 +267,11 @@ function YouLeadsTimeline() {
           <div className="order-3 w-full text-center lg:order-3 lg:w-1/2 lg:pl-10 lg:text-right">
             <div className="flex flex-col gap-[27px] rounded-[20px] md:py-[30px] pt-32 w-full max-w-[350px] md:items-start items-center lg:items-end mx-auto lg:ml-auto">
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
-                Ideation
+                SCRIPTING
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Proven frameworks</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Strategic Content Writing</h3>
               <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4">
-                Scripts and structures trusted by leading brands in real estate, finance, and commercial industries.
+                Every script follows a strategic format—attention-grabbing hook, clear narrative structure, and a well-positioned call-to-action designed to support conversion.
               </p>
             </div>
           </div>
@@ -293,12 +293,12 @@ function YouLeadsTimeline() {
           <div className="order-2 w-full text-center lg:order-1 lg:w-1/2 lg:pr-10 lg:text-left">
             <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] lg:items-start items-center mx-auto lg:mx-0">
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
-                Ideation
+                Editing
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Professional video content</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Strategic Video Editing</h3>
             </div>
             <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
-              Polished editing and branded visuals that make your message clear and persuasive.
+             Strategic video editing combined with motion graphics to strengthen message delivery
             </p>
           </div>
           <div
@@ -393,11 +393,11 @@ function YouLeadsTimeline() {
           <div className="order-3 w-full text-center lg:order-3 lg:w-1/2 lg:text-right">
             <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] md:items-start items-center lg:items-end mx-auto lg:ml-auto">
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
-                Ideation
+                Thumbnail
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">High-converting thumbnails</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Thumbnail Design</h3>
               <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4">
-                Designed to capture attention and drive results in your niche.
+                Thumbnails are analyzed within your niche to identify visual patterns and performance trends, then refined to align with proven design principles.
               </p>
             </div>
           </div>
@@ -452,14 +452,14 @@ function YouLeadsTimeline() {
           </div>
 
           <div className="order-3 w-full text-center lg:order-1 lg:w-1/2 lg:pr-10 lg:text-left">
-            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-center lg:items-start items-center mx-auto lg:mx-0">
+            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-center lg:items-start  mx-auto lg:mx-0">
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
-                Ideation
+                Post
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">From content to clients</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Video Publishing</h3>
             </div>
             <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
-              Post your video and start generating leads that grow your business.
+              With publishing complete, attention turns to tracking engagement and measuring results.
             </p>
           </div>
         </div>

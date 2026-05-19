@@ -62,25 +62,25 @@ export default function AnimatedParallaxSection() {
           <motion.h2
             style={{ opacity: opacity1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-2xl lg:text-4xl/none font-bold font-syne text-white tracking-[2px] "
+            className="text-2xl lg:text-3xl/none font-bold font-syne text-white tracking-[2px] "
           >
-            Tired of boring video content that
+           Boring video content holding you back?
           </motion.h2>
 
           <motion.h2
             style={{ opacity: opacity2 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl lg:text-4xl/none font-bold font-syne text-white tracking-[2px] "
+            className="text-2xl lg:text-3xl/none font-bold font-syne text-white tracking-[2px] "
           >
-            don’t stand out? It’s time to upgrade
+           Upgrade to video built with intention and strategy
           </motion.h2>
 
           <motion.h2
             style={{ opacity: opacity3 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="text-2xl lg:text-4xl/none font-bold font-syne text-white tracking-[2px] "
+            className="text-2xl lg:text-3xl/none font-bold font-syne text-white tracking-[2px] "
           >
-            the game with us!
+            Planned, structured, and aligned with your business goals with us
           </motion.h2>
         </div>
       </section>

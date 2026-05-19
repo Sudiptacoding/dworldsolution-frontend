@@ -89,8 +89,8 @@ const Dashboard = () => {
               {/* Menu Items with Dropdowns */}
               {[
                 { name: "Header Video", dropdownItems: [] },
-                { name: "Video & Shorts", dropdownItems: [] },
                 { name: "About Us", dropdownItems: [] },
+                { name: "Video & Shorts", dropdownItems: [] },
                 { name: "Contract", dropdownItems: [] },
                 // { name: "Daily Earn List", dropdownItems: ["Daily list"] },
                 { name: "Influencer", dropdownItems: [] },

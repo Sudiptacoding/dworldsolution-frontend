@@ -65,13 +65,13 @@ function DoDifferently() {
           <div className="relative bg-gradient-to-b from-[#1e2230] via-[#0e0e0f] to-black rounded-[24px] p-9 text-white md:w-[470px] w-full mx-auto shadow-xl overflow-hidden">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="">
               <div className="relative flex items-center gap-3 mb-6">
-                <Image
-                  src="/image/Logo png.png"
-                  alt="Company Logo"
-                  width={80}
-                  height={40}
-                  className="h-16 w-60"
-                />
+            <Image
+  src="/image/Logo png.png"
+  alt="Company Logo"
+  width={240}
+  height={120}
+  className="h-12 w-auto object-contain"
+/>
                 <Image
                   src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679f48af45ca11634cdee639_Arrow.svg"
                   alt="Arrow"
@@ -85,11 +85,12 @@ function DoDifferently() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="">
               <ul className="flex flex-col gap-y-[21px] pt-[7px] pb-[6px] text-[16px] font-sans ">
                 {[
-                  "In-House Team of 10+ Video & Social Experts",
-                  "Results-Driven Content Strategy",
-                  "Trusted by 150+ Clients Globally",
-                  "Done-For-You Video & Social Media Packages",
-                  "24/7 Support Whenever You Need",
+                  "In-house team of 20+ experts",
+                  "Results-oriented content execution",
+                  "Experience working with 200+ clients",
+                  "Proven done-for-you content funnel",
+                  "Personalized CRM system",
+                  "24/7 support whenever you need assistance",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm sm:text-base">
                     <Image
@@ -110,7 +111,7 @@ function DoDifferently() {
                 <h4 className="mb-4 text-base font-semibold">Bonuses you get with us:</h4>
 
                 <ul className="flex flex-col gap-y-[21px] pt-[7px] pb-[6px] text-[16px] font-sans">
-                  {["Free Social Media Audit & Strategy Session", "Free 1-on-1 Video Editing Consultation"].map((bonus, idx) => (
+                  {["Free GoHighLevel subscription", "Free consultation"].map((bonus, idx) => (
                     <li key={idx} className="flex items-center gap-[13px] opacity-100 [transform-style:preserve-3d]">
                       <Image
                         src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679f916c5fe0a2a75fbc4d47_Check%20Icon.svg"
@@ -139,14 +140,14 @@ function DoDifferently() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="">
               <ul className="flex flex-col gap-y-[21px] pt-[7px] pb-[6px] text-[16px] font-sans text-[#ffffff8f]">
                 {[
-                  "Freelancers Who Miss Deadlines and Deliver Late",
-                  "Edits That Fail to Engage or Convert",
-                  "Weak Thumbnails and Titles That Kill CTR",
-                  "No System for Proper Video Distribution",
-                  "No Expertise in Funnels or Lead Capture",
-                  " Limited Revisions, No Client-Focused Approach",
-                  "Decisions Made on Guesswork, Not Data",
-                  "Slow Responses and Poor Communication",
+                  "Missed deadlines and inconsistent delivery",
+                  "Video edits that fail to engage or support conversions",
+                  "Weak thumbnails and titles that reduce click-through rates",
+                  "Lack of a structured video distribution system",
+                  "No clear understanding of funnels or lead capture",
+                  "Limited revision flexibility and poor client alignmenth",
+                  "Decisions based on assumptions instead of performance insights",
+                  "Slow response times and unclear communication",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-[21px]">
                     <Image

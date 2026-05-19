@@ -6,49 +6,6 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
 import useAboutUs from "@/hook/useAboutUs";
 
-// const slides = [
-//   {
-//     videoThumbnail: "https://img.youtube.com/vi/Rkh-ReiSlv4/maxresdefault.jpg",
-//     videoURL: "https://youtube.com/shorts/Rkh-ReiSlv4?si=v5CH3GQVfYYWmzfG",
-//     caption: "I have nothing but great things to say. They definitely helped me kickstart everything that I've done on on YouTube",
-//     user: {
-//       name: "Spencer Pawliw",
-//       profaction: "Skool Games Winner",
-//       avatar: "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68035577b876fec0846e9f77_channels4_profile.avif",
-//     },
-//   },
-//   {
-//     videoThumbnail: "https://embed-ssl.wistia.com/deliveries/512386a4608ebf387ed0991650d90e8797ecaef2.webp?image_crop_resized=1080x1920",
-//     videoURL: "https://youtube.com/shorts/Rkh-ReiSlv4?si=eUwUFweXcHXf0zzl",
-//     caption: "I have nothing but great things to say. They definitely helped me kickstart everything that I've done on on YouTube",
-//     user: {
-//       name: "Spencer Pawliw",
-//       profaction: "Skool Games Winner",
-//       avatar: "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68035577b876fec0846e9f77_channels4_profile.avif",
-//     },
-//   },
-//   {
-//     videoThumbnail: "https://embed-ssl.wistia.com/deliveries/512386a4608ebf387ed0991650d90e8797ecaef2.webp?image_crop_resized=1080x1920",
-//     videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4?si=C0jmHz5yMCQE15kE",
-//     caption: "I have nothing but great things to say. They definitely helped me kickstart everything that I've done on on YouTube",
-//     user: {
-//       name: "Spencer Pawliw",
-//       profaction: "Skool Games Winner",
-//       avatar: "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68035577b876fec0846e9f77_channels4_profile.avif",
-//     },
-//   },
-//   {
-//     videoThumbnail: "https://embed-ssl.wistia.com/deliveries/512386a4608ebf387ed0991650d90e8797ecaef2.webp?image_crop_resized=1080x1920",
-//     videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4?si=C0jmHz5yMCQE15kE",
-//     caption: "I have nothing but great things to say. They definitely helped me kickstart everything that I've done on on YouTube",
-//     user: {
-//       name: "Spencer Pawliw",
-//       profaction: "Skool Games Winner",
-//       avatar: "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68035577b876fec0846e9f77_channels4_profile.avif",
-//     },
-//   },
-// ];
-
 export default function AboutUsSlider() {
   const { isPending, error, aboutUs, refetch } = useAboutUs();
   const slides = aboutUs || [];
@@ -104,7 +61,29 @@ export default function AboutUsSlider() {
       return url; // fallback
     }
   };
+const getThumbnail = (url) => {
+  try {
+    const parsedUrl = new URL(url);
 
+    let videoId = "";
+
+    if (parsedUrl.hostname.includes("youtu.be")) {
+      videoId = parsedUrl.pathname.slice(1);
+    } 
+    else if (parsedUrl.pathname.startsWith("/shorts/")) {
+      videoId = parsedUrl.pathname.split("/")[2];
+    } 
+    else if (parsedUrl.searchParams.has("v")) {
+      videoId = parsedUrl.searchParams.get("v");
+    }
+
+    if (!videoId) return "";
+
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  } catch (e) {
+    return "";
+  }
+};
 
   return (
     <div className="relative flex items-center justify-center min-h-screen px-4 bg-black">
@@ -129,19 +108,21 @@ export default function AboutUsSlider() {
             exit="exit"
             className="max-w-full text-center text-white"
           >
-            <div
-              className="relative w-[300px] h-[533px] mx-auto rounded-2xl overflow-hidden cursor-pointer bg-black"
-              style={{ position: "relative" }}
-            >
+        <div
+  className="relative w-[300px] h-[533px] mx-auto rounded-2xl overflow-hidden cursor-pointer bg-black"
+  style={{ position: "relative", imageRendering: "auto" }}
+>
               {!isPlaying ? (
                 <>
                   {/* Thumbnail Image */}
-                  <img
-                    src={slides[current].videoThumbnail}
-                    alt="Video Thumbnail"
-                    className="absolute top-0 left-0 object-cover w-full h-full rounded-2xl"
-                    onClick={() => setIsPlaying(true)}
-                  />
+<img
+  src={getThumbnail(slides[current].videoURL)}
+  alt="Video Thumbnail"
+  className="absolute top-0 left-0 object-cover w-full h-full rounded-2xl"
+  onClick={() => setIsPlaying(true)}
+  loading="eager"
+  decoding="async"
+/>
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-75 rounded-full">
