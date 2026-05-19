@@ -16,7 +16,7 @@ const MarqueeRow = ({ direction = "left" }) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get("http://localhost:5000/influencers");
+      const res = await axios.get("https://dworldsolution-backend.onrender.com/influencers");
       if (Array.isArray(res.data)) {
         setTestimonials(res.data);
       } else {

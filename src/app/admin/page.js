@@ -20,7 +20,7 @@
 
 //   const requestLogin = async () => {
 //     try {
-//       const res = await axios.post("http://localhost:5000/admin/request-login", { email });
+//       const res = await axios.post("https://dworldsolution-backend.onrender.com/admin/request-login", { email });
 //       setMessage(res.data.message);
 //       setOtpSent(true);
 //     } catch (err) {
@@ -30,7 +30,7 @@
 
 //   const verifyOtp = async () => {
 //     try {
-//       const res = await axios.post("http://localhost:5000/admin/verify-otp", { email, otp });
+//       const res = await axios.post("https://dworldsolution-backend.onrender.com/admin/verify-otp", { email, otp });
 //       console.log(res.data);
 //       setMessage("✅ Login Successful");
 //       setIsVerified(true); // ✅ show dashboard
@@ -107,7 +107,7 @@ export default function AdminLogin() {
 
   const requestLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/admin/request-login", { email });
+      const res = await axios.post("https://dworldsolution-backend.onrender.com/admin/request-login", { email });
       setMessage(res.data.message);
       setOtpSent(true);
     } catch (err) {
@@ -117,7 +117,7 @@ export default function AdminLogin() {
 
   const verifyOtp = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/admin/verify-otp", { email, otp });
+      const res = await axios.post("https://dworldsolution-backend.onrender.com/admin/verify-otp", { email, otp });
       console.log(res.data);
       
       // ✅ লগইন সফল হলে localStorage-এ সেভ করুন

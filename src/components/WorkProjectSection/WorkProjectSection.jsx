@@ -29,7 +29,7 @@ function WorkProjectSection() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/header-video-upload"); // আপনার API URL
+        const res = await axios.get("https://dworldsolution-backend.onrender.com/header-video-upload"); // আপনার API URL
         const apiData = res.data.map((item) => ({
           videoURL: item.src,
           thumbnailURL: item.thumbnail,

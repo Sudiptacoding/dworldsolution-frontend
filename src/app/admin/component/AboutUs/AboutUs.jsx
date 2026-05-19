@@ -19,7 +19,7 @@ export default function AboutUs() {
 
   const fetchShorts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/about-us");
+      const res = await axios.get("https://dworldsolution-backend.onrender.com/about-us");
       setShorts(res.data);
     } catch (err) {
       toast.error("Failed to fetch shorts");
@@ -95,10 +95,10 @@ export default function AboutUs() {
       };
 
       if (form._id) {
-        await axios.put(`http://localhost:5000/about-us/${form._id}`, data);
+        await axios.put(`https://dworldsolution-backend.onrender.com/about-us/${form._id}`, data);
         toast.success("Short updated successfully");
       } else {
-        await axios.post("http://localhost:5000/about-us", data);
+        await axios.post("https://dworldsolution-backend.onrender.com/about-us", data);
         toast.success("Short uploaded successfully");
       }
 
@@ -128,7 +128,7 @@ export default function AboutUs() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/about-us/${id}`);
+      await axios.delete(`https://dworldsolution-backend.onrender.com/about-us/${id}`);
       toast.success("Short deleted");
       fetchShorts();
     } catch (err) {

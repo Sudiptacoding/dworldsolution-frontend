@@ -14,7 +14,7 @@ function HeaderVideo() {
   const fetchVideo = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/header-video");
+      const res = await axios.get("https://dworldsolution-backend.onrender.com/header-video");
       setVideo(res.data);
       setIframe(res.data?.src ? `<iframe src="${res.data.src}" frameborder="0"></iframe>` : "");
     } catch (err) {
@@ -49,11 +49,11 @@ function HeaderVideo() {
 
     try {
       if (video) {
-        await axios.put(`http://localhost:5000/header-video/${video._id}`, { iframe });
+        await axios.put(`https://dworldsolution-backend.onrender.com/header-video/${video._id}`, { iframe });
         toast.success("Video updated successfully!");
         refetch();
       } else {
-        await axios.post("http://localhost:5000/header-video", { iframe });
+        await axios.post("https://dworldsolution-backend.onrender.com/header-video", { iframe });
         toast.success("Video uploaded successfully!");
         refetch();
       }
@@ -65,7 +65,7 @@ function HeaderVideo() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/header-video/${video._id}`);
+      await axios.delete(`https://dworldsolution-backend.onrender.com/header-video/${video._id}`);
       toast.success("Video deleted.");
       refetch();
       setVideo(null);

@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000",
-  // baseURL: 'http://localhost:5000',
+  baseURL: "https://dworldsolution-backend.onrender.com",
+  // baseURL: 'https://dworldsolution-backend.onrender.com',
 });
 
 const useAxios = () => {

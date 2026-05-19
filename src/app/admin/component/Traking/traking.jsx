@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/analytics').then(res => setData(res.data));
+    axios.get('https://dworldsolution-backend.onrender.com/api/analytics').then(res => setData(res.data));
   },[]);
 
   const exportCSV = () => {
@@ -19,12 +19,7 @@ export default function Dashboard() {
     a.href = url; a.download = 'analytics.csv'; a.click();
   };
 
-  const handleCleanup = async () => {
-    if(confirm("Are you sure to delete 1 month old data?")) {
-        await axios.post('http://localhost:5000/api/cleanup');
-        window.location.reload();
-    }
-  };
+
 
   return (
     <div className="p-8 bg-gray-900 text-white min-h-screen">
@@ -32,7 +27,7 @@ export default function Dashboard() {
       <div className="flex gap-4 mb-6">
         <input placeholder="Search Country..." className="p-2 bg-gray-800 rounded text-white" onChange={(e) => setSearchTerm(e.target.value)} />
         <button onClick={exportCSV} className="bg-blue-600 px-4 py-2 rounded">Export CSV</button>
-        <button onClick={handleCleanup} className="bg-red-600 px-4 py-2 rounded">Clear Old Data</button>
+        
       </div>
 
       <table className="w-full text-left bg-gray-800 rounded-lg overflow-hidden">
