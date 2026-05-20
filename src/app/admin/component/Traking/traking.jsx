@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    axios.get('https://dworldsolution-backend.onrender.com/api/analytics').then(res => setData(res.data));
+    axios.get('https://dworldsolution-backend.vercel.app/api/analytics').then(res => setData(res.data));
   },[]);
 
   const exportCSV = () => {

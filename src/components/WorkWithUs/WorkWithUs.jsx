@@ -167,7 +167,7 @@ export default function WorkWithUs() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const res = await axios.post("https://dworldsolution-backend.onrender.com/contact", data, {
+      const res = await axios.post("https://dworldsolution-backend.vercel.app/contact", data, {
         headers: {
           "Content-Type": "application/json",
         },

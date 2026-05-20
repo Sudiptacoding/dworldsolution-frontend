@@ -11,7 +11,7 @@ export default function Tracker() {
     
     const sendData = async () => {
       const duration = (Date.now() - startTime) / 1000;
-      await axios.post('https://dworldsolution-backend.onrender.com/api/track', {
+      await axios.post('https://dworldsolution-backend.vercel.app/api/track', {
         url: pathname,
         referrer: document.referrer || 'Direct',
         sessionDuration: duration

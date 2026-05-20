@@ -18,7 +18,7 @@ const InfluencerAdmin = () => {
   // ✅ Fetch all influencers
   const fetchInfluencers = async () => {
     try {
-      const res = await axios.get("https://dworldsolution-backend.onrender.com/influencers");
+      const res = await axios.get("https://dworldsolution-backend.vercel.app/influencers");
       setInfluencers(res.data);
     } catch (error) {
       console.error("Error fetching influencers:", error.message);
@@ -74,10 +74,10 @@ const InfluencerAdmin = () => {
       const payload = { ...formData, image: uploadedImage };
 
       if (editingId) {
-        await axios.put(`https://dworldsolution-backend.onrender.com/influencers/${editingId}`, payload);
+        await axios.put(`https://dworldsolution-backend.vercel.app/influencers/${editingId}`, payload);
         setEditingId(null);
       } else {
-        const res = await axios.post("https://dworldsolution-backend.onrender.com/influencers", payload);
+        const res = await axios.post("https://dworldsolution-backend.vercel.app/influencers", payload);
         console.log(res);
       }
 
@@ -93,7 +93,7 @@ const InfluencerAdmin = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this influencer?")) return;
     try {
-      await axios.delete(`https://dworldsolution-backend.onrender.com/influencers/${id}`);
+      await axios.delete(`https://dworldsolution-backend.vercel.app/influencers/${id}`);
       fetchInfluencers();
     } catch (error) {
       console.error("Error deleting influencer:", error.message);

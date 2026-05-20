@@ -16,7 +16,7 @@ const ContactAdmin = () => {
   // ✅ Fetch all contacts
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("https://dworldsolution-backend.onrender.com/contact");
+      const res = await axios.get("https://dworldsolution-backend.vercel.app/contact");
       setContacts(res.data);
     } catch (error) {
       console.error("Error fetching contacts:", error.message);
@@ -38,7 +38,7 @@ const ContactAdmin = () => {
 
     try {
       if (editingId) {
-        await axios.put(`https://dworldsolution-backend.onrender.com/contact/${editingId}`, formData);
+        await axios.put(`https://dworldsolution-backend.vercel.app/contact/${editingId}`, formData);
         setEditingId(null);
 
         setFormData({
@@ -62,7 +62,7 @@ const ContactAdmin = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this contact?")) return;
     try {
-      await axios.delete(`https://dworldsolution-backend.onrender.com/contact/${id}`);
+      await axios.delete(`https://dworldsolution-backend.vercel.app/contact/${id}`);
       fetchContacts();
     } catch (error) {
       console.error("Error deleting contact:", error.message);

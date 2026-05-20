@@ -16,7 +16,7 @@ const MarqueeRow = ({ direction = "left" }) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get("https://dworldsolution-backend.onrender.com/influencers");
+      const res = await axios.get("https://dworldsolution-backend.vercel.app/influencers");
       if (Array.isArray(res.data)) {
         setTestimonials(res.data);
       } else {

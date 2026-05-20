@@ -32,7 +32,7 @@ function Video() {
   const isShorts = (url) => url.includes("/shorts/");
 
   const fetchVideos = async () => {
-    const res = await axios.get("https://dworldsolution-backend.onrender.com/header-video-upload");
+    const res = await axios.get("https://dworldsolution-backend.vercel.app/header-video-upload");
     setVideos(res.data);
   };
 
@@ -46,7 +46,7 @@ function Video() {
     const finalCategory = isShorts(url) ? "Shorts" : category.trim();
     if (!finalCategory) return alert("Please enter a category for regular videos");
 
-    await axios.post("https://dworldsolution-backend.onrender.com/header-video-upload", {
+    await axios.post("https://dworldsolution-backend.vercel.app/header-video-upload", {
       videoURL: url,
       category: finalCategory,
       thumbnailURL: getThumbnail(url),
@@ -58,7 +58,7 @@ function Video() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`https://dworldsolution-backend.onrender.com/header-video-upload/${id}`);
+    await axios.delete(`https://dworldsolution-backend.vercel.app/header-video-upload/${id}`);
     fetchVideos();
   };
 
@@ -73,7 +73,7 @@ function Video() {
     const finalCategory = isShorts(editUrl) ? "Shorts" : editCategory.trim();
     if (!finalCategory) return alert("Please enter a category for regular videos");
 
-    await axios.put(`https://dworldsolution-backend.onrender.com/header-video-upload/${editingId}`, {
+    await axios.put(`https://dworldsolution-backend.vercel.app/header-video-upload/${editingId}`, {
       src: editUrl,
       category: finalCategory,
       thumbnail: getThumbnail(editUrl),
