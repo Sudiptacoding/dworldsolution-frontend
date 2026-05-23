@@ -119,22 +119,33 @@ const faqs = [
   {
     question: "Tell me about your agency.",
     answer:
-      "Lumenza helps creators, brands, and coaches grow with proven video strategies—delivering content that’s engaging, professional, and designed to convert audiences.",
+      "Dworldsolution supports business owners, creators, entrepreneurs, and personal brands in building a strong, credible presence through high-quality video editing and strategic social media marketing.",
   },
   {
-    question: "Tell me about your content plan.",
+    question: "What services will DworldSolutions provide?",
     answer:
-      "We craft tailored content strategies using proven frameworks, storytelling, and market insights to help creators, brands, and coaches consistently stand out.",
+      "Video editing services include YouTube videos, Shorts, Instagram Reels, TikTok, Facebook Reels, and promotional content. Social media marketing focuses on creating engaging content and managing campaigns to support audience growth and conversions",
   },
   {
-    question: "What services will you provide?",
+    question: "If raw footage isn’t available, Will AI-generated content match my brand?",
     answer:
-      "We provide video editing, motion graphics, scripts, thumbnails, and distribution strategies—everything creators, brands, and coaches need to grow effectively.",
+      "Yes. Content is guided by your brand style, messaging, and goals to ensure consistency in tone and presentation.",
   },
   {
-    question: " Why wouldn’t I hire a freelancer?",
+    question: "What is your content plan?",
     answer:
-      "Freelancers may lack consistency and systems. With Lumenza, creators, brands, and coaches get structured execution, rapid delivery, and growth-focused strategies every time.",
+      "A strategy-led content plan built around clear positioning, structured planning, and consistent execution, with AI-assisted workflows used where needed.",
+  },
+
+  {
+    question: "How does your process work?",
+    answer:
+      "The process begins with understanding your goals, audience, and content needs, followed by a discovery call to align on direction. Content is then planned, created, and refined through structured workflows and feedback loops.",
+  },
+  {
+    question: "Why choose your agency?",
+    answer:
+      "A structured approach, clear communication, and consistent execution, with content aligned to your goals. Each project begins with a focused brainstorming session to understand your business, supported by an experienced team that develops tailored content ideas.",
   },
  
 ];

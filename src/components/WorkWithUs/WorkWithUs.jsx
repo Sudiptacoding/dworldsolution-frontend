@@ -249,12 +249,12 @@ export default function WorkWithUs() {
               />
 
               <h4 className="text-lg font-semibold leading-tight md:text-xl">
-                Meet Mahmudul, <span className="text-[#7EE0FF]">Brain Behind</span>
+                Meet the Team <span className="text-[#7EE0FF]"> Behind the Strategy</span>
               </h4>
 
               <p className="text-sm leading-relaxed text-gray-200 md:text-base">
-                Let’s discuss your unique design challenges. Schedule your complimentary consultation today and let’s find the best solutions
-                together.
+                Enhance your brand with polished, high-quality video content. Schedule your complimentary consultation to discuss visuals designed to
+                engage and convert.
               </p>
 
               <div>
@@ -267,7 +267,7 @@ export default function WorkWithUs() {
                     backgroundImage: "linear-gradient(80deg, #B03BFF, #408BFF)",
                   }}
                 >
-                  <span className="relative z-10">Schedule a Virtual Coffee</span>
+                  <span className="relative z-10">Book a Virtual Consultation</span>
                   <span className="absolute inset-[2px] rounded-full bg-[#050A26]"></span>
                 </a>
               </div>
