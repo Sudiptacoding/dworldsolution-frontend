@@ -166,10 +166,11 @@ import useHeaderVideo from "@/hook/useHeaderVideo";
 import { useState } from "react";
 
 const clientImages = [
-  "/image/logo1.png",
+  "/image/logo5.jpg",
   "/image/logo3.png",
-  "/image/logo2.png",
   "/image/logo4.png",
+  "/image/logo8.png",
+  "/image/logo66.png",
 ];
 
 export default function HeroSection() {
