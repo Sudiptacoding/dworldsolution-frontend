@@ -440,9 +440,9 @@ function Video() {
   };
 
   return (
-    <div className="pt-0 text-white bg-black md:pt-10 min-h-screen relative">
+    <div className="pt-0 text-white bg-black !md:pt-0 min-h-screen relative">
       {/* Heading */}
-      <div className="px-4 pt-0 pb-12 text-center md:py-16 sm:px-6 lg:px-8">
+      <div className="px-4 pt-0 pb-12 text-center md:py-0 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

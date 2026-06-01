@@ -187,8 +187,11 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+import { useRouter, useSearchParams } from "next/navigation";
 
 function WorkProjectSection() {
+  const router = useRouter();
+const searchParams = useSearchParams();
   const [items, setItems] = useState([]);
   const [activeCategory, setActiveCategory] = useState("");
   const [categories, setCategories] = useState([]);
@@ -238,6 +241,64 @@ function WorkProjectSection() {
     return "/placeholder.jpg"; // কোনো সোর্স না পেলে ব্ল্যাঙ্ক ডিফেন্ডিং ইমেজ
   };
 
+
+
+
+
+  useEffect(() => {
+  const category = searchParams.get("category");
+  const search = searchParams.get("search");
+  const type = searchParams.get("type");
+
+  if (category) setActiveCategory(category);
+  if (search) setSearchQuery(search);
+  if (type) setSelectedType(type);
+}, [searchParams]);
+
+
+
+useEffect(() => {
+  if (!items.length) return;
+
+  const category = searchParams.get("category");
+  if (category) {
+    setActiveCategory(category);
+  }
+}, [items]);
+
+
+
+
+useEffect(() => {
+  const params = new URLSearchParams();
+
+  if (activeCategory) {
+    params.set("category", activeCategory);
+  }
+
+  if (searchQuery) {
+    params.set("search", searchQuery);
+  }
+
+  if (selectedType !== "all") {
+    params.set("type", selectedType);
+  }
+
+  router.replace(`?${params.toString()}#work`, {
+    scroll: false,
+  });
+}, [activeCategory, searchQuery, selectedType, router]);
+
+useEffect(() => {
+  if (window.location.hash === "#work") {
+    setTimeout(() => {
+      document.getElementById("work")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 300);
+  }
+}, []);
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -278,7 +339,9 @@ function WorkProjectSection() {
 
   // টপিক, টাইটেল এবং ক্যাটাগরি বেসড সার্চিং লজিক
   const filteredItems = items?.filter((item) => {
-    const matchesCategory = item?.category === activeCategory;
+    // const matchesCategory = item?.category === activeCategory;
+    const matchesCategory =
+  !activeCategory || item?.category === activeCategory;
     const matchesType = selectedType === "all" || item?.type === selectedType;
     
     // টাইটেল, ক্যাটাগরি অথবা টপিক-লিস্টের সাথে মিলছে কিনা তা যাচাই
