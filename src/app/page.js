@@ -77,7 +77,7 @@ import WeDo from "@/components/WeDo/WeDo";
 import WorkProjectSection from "@/components/WorkProjectSection/WorkProjectSection";
 import WorkWithUs from "@/components/WorkWithUs/WorkWithUs";
 import YouLeadsTimeline from "@/components/YouLeadsTimeline/YouLeadsTimeline";
-
+import { Suspense } from "react";
 
 import React from "react";
 
@@ -99,11 +99,18 @@ function page() {
       </div>
 
       {/* ২. Work Section Wrapper */}
-      <div id="work" className="scroll-mt-24">
+      {/* <div id="work" className="scroll-mt-24">
         <AnimatedSection>
           <WorkProjectSection></WorkProjectSection>
         </AnimatedSection>
-      </div>
+      </div> */}
+      <div id="work" className="scroll-mt-24">
+  <AnimatedSection>
+    <Suspense fallback={<div>Loading...</div>}>
+      <WorkProjectSection />
+    </Suspense>
+  </AnimatedSection>
+</div>
 
       <DoDifferently></DoDifferently>
       
