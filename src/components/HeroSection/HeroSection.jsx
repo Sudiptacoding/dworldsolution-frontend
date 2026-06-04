@@ -166,10 +166,10 @@ import useHeaderVideo from "@/hook/useHeaderVideo";
 import { useState } from "react";
 
 const clientImages = [
-  "/image/logo5.jpg",
-  "/image/logo3.png",
   "/image/logo4.png",
   "/image/logo8.png",
+  "/image/logo5.jpg",
+  "/image/logo3.png",
   "/image/logo66.png",
 ];
 
@@ -194,7 +194,7 @@ export default function HeroSection() {
           <div className="relative flex flex-col items-center justify-center">
             <div className="absolute inset-0 flex items-center justify-center -z-10">
               <div
-                className="absolute lg:w-[850px] lg:h-[850px] w-[400px] h-[400px] rounded-full border-l border-r border-white/20
+                className="absolute lg:w-[880px] lg:h-[850px] w-[400px] h-[400px] rounded-full border-l border-r border-white/20
                opacity-0 animate-circle-1">
               </div>
               <div
@@ -213,7 +213,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6 }}
               className="max-w-[60rem] mx-auto mb-1 text-center"
             >
-              <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-6xl ">
+              <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-[53px] !leading-[49px] ">
                Get More Leads Through Thoughtfully Planned Video And Social Media Content
               </h1>
             </motion.div>
@@ -278,7 +278,7 @@ export default function HeroSection() {
               </p>
             </motion.div>
             {/* Button */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -293,7 +293,7 @@ export default function HeroSection() {
                   Sign in with Google
                 </Link>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {
