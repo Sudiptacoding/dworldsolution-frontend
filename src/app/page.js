@@ -99,18 +99,18 @@ function page() {
       </div>
 
       {/* ২. Work Section Wrapper */}
-      <div id="work" className="scroll-mt-24">
+      {/* <div id="work" className="scroll-mt-24">
         <AnimatedSection>
           <WorkProjectSection></WorkProjectSection>
         </AnimatedSection>
-      </div>
-      {/* <div id="work" className="scroll-mt-24"> */}
-  {/* <AnimatedSection>
+      </div> */}
+      <div id="work" className="scroll-mt-24">
+  <AnimatedSection>
     <Suspense fallback={<div>Loading...</div>}>
       <WorkProjectSection />
     </Suspense>
   </AnimatedSection>
-</div> */}
+</div>
 
       <DoDifferently></DoDifferently>
       
