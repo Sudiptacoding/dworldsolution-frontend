@@ -58,10 +58,6 @@
 
 // export default page;
 
-
-
-
-
 import HashScroll from "@/common/HashScroll";
 import AboutUsSlider from "@/components/AboutUsSlider/AboutUsSlider";
 import AnimatedSection from "@/components/AnimatedSection/AnimatedSection";
@@ -85,7 +81,7 @@ function page() {
   return (
     <div className="bg-black">
       {/* ডাইনামিক স্ক্রল হ্যান্ডলার */}
-      <HashScroll /> 
+      <HashScroll />
 
       <Navbar id="#" />
       <HeroSection></HeroSection>
@@ -105,15 +101,15 @@ function page() {
         </AnimatedSection>
       </div> */}
       <div id="work" className="scroll-mt-24">
-  <AnimatedSection>
-    <Suspense fallback={<div>Loading...</div>}>
-      <WorkProjectSection />
-    </Suspense>
-  </AnimatedSection>
-</div>
+        <AnimatedSection>
+          <Suspense fallback={<div>Loading...</div>}>
+            <WorkProjectSection />
+          </Suspense>
+        </AnimatedSection>
+      </div>
 
       <DoDifferently></DoDifferently>
-      
+
       {/* ৩. Process Section Wrapper */}
       <div id="Process" className="scroll-mt-24">
         <AnimatedSection>
