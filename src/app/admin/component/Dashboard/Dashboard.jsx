@@ -8,6 +8,7 @@ import AboutUs from "../AboutUs/AboutUs";
 import ContactAdmin from "../ContactAdmin/ContactAdmin";
 import InfluencerAdmin from "../InfluencerAdmin/InfluencerAdmin";
 import Traking from "../Traking/traking";
+import WeDo from "../wedo/Wedo";
 
 
 
@@ -92,6 +93,7 @@ const Dashboard = () => {
                 { name: "About Us", dropdownItems: [] },
                 { name: "Video & Shorts", dropdownItems: [] },
                 { name: "Contract", dropdownItems: [] },
+                { name: "We Do", dropdownItems: [] },
                 // { name: "Daily Earn List", dropdownItems: ["Daily list"] },
                 { name: "Influencer", dropdownItems: [] },
                 { name: "Traking", dropdownItems: [] },
@@ -163,6 +165,7 @@ const Dashboard = () => {
            
             {activeComponent === "About Us" && <div> <AboutUs></AboutUs> </div>}
             {activeComponent === "Contract" && <div> <ContactAdmin></ContactAdmin> </div>}
+            {activeComponent === "We Do" && <div> <WeDo></WeDo> </div>}
             {activeComponent === "Influencer" && <div> <InfluencerAdmin></InfluencerAdmin> </div>}
             {activeComponent === "Traking" && <div> <Traking></Traking> </div>}
 

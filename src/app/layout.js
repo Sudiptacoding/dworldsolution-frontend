@@ -3,9 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 import QueryProvider from "@/provider/QueryProvider";
 import CustomCursor from "@/common/CustomCursor/CustomCursor";
-
-
-
+import WhatsAppChatWidget from "@/components/WhatsAppFloat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -129,7 +127,18 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased`}>
         <QueryProvider>
           <CustomCursor />
-       {children}
+          {children}
+          {/* Global Floating WhatsApp Chat Widget */}
+          <WhatsAppChatWidget
+            phoneNumber="8801911081400" // Set with your international format (no '+' or spaces)
+            adminName="D World Solution" // Brand name
+            welcomeMessage={`Hello! Welcome to D World Solution. 😊
+
+We provide professional video editing, digital marketing, branding, and content creation services.
+
+How can we help you today? Please type your message below to let us know.`} // Customized welcome message
+            placeholderText="Type your message..."
+          />
         </QueryProvider>
 
         {/* Google Analytics */}

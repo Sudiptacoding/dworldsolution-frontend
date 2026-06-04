@@ -109,7 +109,7 @@ export default function AnimatedParallaxSection() {
         {/* Block 3 */}
         <div className="w-[120px] md:w-[192px] text-white flex flex-col items-center md:items-start relative">
           <div className="text-2xl font-bold text-center md:text-4xl font-geist md:text-left">
-            <SmartCount end={50} duration={5} />
+            <SmartCount end={60} duration={5} />
             <span className="ml-1 text-xl md:text-3xl">%</span>
           </div>
           <p className="text-white text-sm md:text-base mt-3 font-syne pl-[0px] md:pl-[48px] text-right md:text-left w-full">More Leads</p>

@@ -29,10 +29,10 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="items-center justify-center flex-1 hidden space-x-6 text-sm md:flex">
-          <NavLink href="#testimonial" text="Review" />
-          <NavLink href="#work" text="Work" />
+          <NavLink href="#work" text="Our Work" />
+          <NavLink href="#testimonial" text="Client Review" />
+          <NavLink href="#Process" text="Work Process" />
           <NavLink href="#case-study" text="Case Study" />
-          <NavLink href="#Process" text="Process" />
         </nav>
 
         {/* CTA Button */}
@@ -58,8 +58,8 @@ export default function Navbar() {
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
           <div className="absolute left-0 w-full p-4 mt-2 space-y-4 border rounded-lg top-full bg-black/90 backdrop-blur-md border-white/10 md:hidden">
-            <MobileNavLink href="#testimonial" text="Review" />
             <MobileNavLink href="#work" text="Work" />
+            <MobileNavLink href="#testimonial" text="Review" />
             <MobileNavLink href="#case-study" text="Case Study" />
             <MobileNavLink href="#Process" text="Process" />
             <Link href="#book-a-call" className="block px-4 py-2 font-semibold text-center text-black bg-white rounded">
