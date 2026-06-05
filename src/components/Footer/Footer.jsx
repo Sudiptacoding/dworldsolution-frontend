@@ -114,6 +114,7 @@ import React from "react";
 import Container from "../../common/Container/Container";
 import Link from "next/link";
 import Image from "next/image";
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -156,10 +157,37 @@ function Footer() {
 
           {/* Bottom Made-by Section */}
           <div className="flex flex-col items-center justify-between gap-6 pb-10 md:flex-row">
-            <div className="text-[12.5px] text-[#A0A0A0] font-normal leading-[1.5em]">© 2025 dworldsolution | all rights reserved by dworldsolution</div>
+            <div className="text-[12.5px] text-[#A0A0A0] font-normal leading-[1.5em]">
+              © 2026 dworldsolution | all rights reserved by dworldsolution
+            </div>
 
             {/* Social Media Links */}
             <div className="flex gap-[30px]">
+
+
+            {/* Call Us */}
+  <a
+    href="tel:781-999-1222" // ডায়াল প্যাড ওপেন করার জন্য নাম্বারটি সেট করা হয়েছে
+    className="w-[20px] text-white inline-block transition-opacity duration-300 hover:opacity-70"
+    aria-label="Call Us"
+  >
+    <FaPhoneAlt size={18} className="w-full h-auto" />
+  </a>
+
+  {/* Email Us */}
+  <a
+    href="mailto:info@brickmarketing.com" // সরাসরি ইমেইল পাঠানোর জন্য এড্রেসটি সেট করা হয়েছে
+    className="w-[20px] text-white inline-block transition-opacity duration-300 hover:opacity-70"
+    aria-label="Email Us"
+  >
+    <FaEnvelope size={18} className="w-full h-auto" />
+  </a>
+
+
+
+
+              
+
               <a
                 href="https://www.linkedin.com/company/d-world-solution/"
                 target="_blank"

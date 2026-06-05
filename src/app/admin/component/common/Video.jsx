@@ -213,12 +213,14 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+import DragandDrop from "../DragandDrop/DragandDrop";
 
 function Video() {
   const [items, setItems] = useState([]);
   const [activeCategory, setActiveCategory] = useState("");
   const [categories, setCategories] = useState([]);
   const [playingIndex, setPlayingIndex] = useState(null); // track which video is playing
+  const [showDragAndDrop, setShowDragAndDrop] = useState(false);
   
   // ফিল্টার ও টপিক সার্চ স্টেট
   const [searchQuery, setSearchQuery] = useState("");
@@ -474,6 +476,14 @@ function Video() {
         </motion.div>
       </div>
 
+{/* বাটন ট্রু (True) হলে ড্র্যাগ অ্যান্ড ড্রপ কম্পোনেন্টটি দেখাবে */}
+      {showDragAndDrop && (
+        <div className="max-w-5xl mx-auto px-4 mb-8 transition-all duration-300">
+          <DragandDrop />
+        </div>
+      )}
+
+
       {/* Control Row: Tabs (Left) & Search/Filter (Right Corner) */}
       <motion.div 
         initial={{ opacity: 0, y: 30 }} 
@@ -562,7 +572,22 @@ function Video() {
         >
           {isAdminMode ? "🔒 Exit Admin" : "🔓 Admin Controls"}
         </button>
+             <button
+          onClick={() => setShowDragAndDrop(!showDragAndDrop)}
+          className={`flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all duration-300 ${
+            showDragAndDrop 
+              ? "bg-emerald-500/20 border-emerald-500 text-white" 
+              : "bg-neutral-900 border-neutral-800 text-gray-400 hover:text-white"
+          }`}
+        >
+          {showDragAndDrop ? "✕ Close Reorder" : "↕️ Reorder Videos"}
+        </button>
       </div>
+
+
+
+
+      
 
       {/* Grid Content */}
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}>

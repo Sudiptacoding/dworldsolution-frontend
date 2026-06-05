@@ -86,7 +86,43 @@ const getThumbnail = (url) => {
 };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen px-4 bg-black">
+    <>
+     <div className="px-4  text-center text-white bg-black sm:px-6 lg:px-8 pb-8">
+        {/* Badge with animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          style={{ fontFamily: "'Syne', sans-serif" }}
+          className="inline-block text-sm font-semibold uppercase text-white tracking-[1px]  px-4 py-1 rounded-full mb-2"
+        >
+          Client Testimonials
+        </motion.div>
+
+        {/* Heading with animation */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          style={{ fontFamily: "'Syne', sans-serif" }}
+          className="text-3xl sm:text-4xl md:text-4xl font-sans font-semibold leading-tight bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
+        >
+          Hear what they’re
+        </motion.h2>
+
+        {/* Optional subtitle with delay */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          style={{ fontFamily: "'Syne', sans-serif" }}
+          className="text-3xl sm:text-4xl tracking-[1px] md:text-4xl/none pt-2 font-sans font-semibold  text-white "
+        >
+          {/* Optional subtitle text */}
+          Saying about us
+        </motion.div>
+      </div>
+       <div className="relative flex items-center justify-center min-h-screen px-4 bg-black">
       <div className="relative flex items-center justify-center w-full max-w-screen-xl">
         {/* Left Arrow */}
         <button
@@ -198,5 +234,7 @@ const getThumbnail = (url) => {
         </button>
       </div>
     </div>
+    </>
+   
   );
 }

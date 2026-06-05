@@ -32,7 +32,7 @@ export default function Navbar() {
           <NavLink href="#work" text="Our Work" />
           <NavLink href="#testimonial" text="Client Review" />
           <NavLink href="#Process" text="Work Process" />
-          <NavLink href="#case-study" text="Case Study" />
+          {/* <NavLink href="#case-study" text="Case Study" /> */}
         </nav>
 
         {/* CTA Button */}
@@ -60,7 +60,7 @@ export default function Navbar() {
           <div className="absolute left-0 w-full p-4 mt-2 space-y-4 border rounded-lg top-full bg-black/90 backdrop-blur-md border-white/10 md:hidden">
             <MobileNavLink href="#work" text="Work" />
             <MobileNavLink href="#testimonial" text="Review" />
-            <MobileNavLink href="#case-study" text="Case Study" />
+            {/* <MobileNavLink href="#case-study" text="Case Study" /> */}
             <MobileNavLink href="#Process" text="Process" />
             <Link href="#book-a-call" className="block px-4 py-2 font-semibold text-center text-black bg-white rounded">
               Book a call

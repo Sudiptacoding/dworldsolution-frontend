@@ -72,7 +72,7 @@ export default function AnimatedParallaxSection() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="text-2xl lg:text-3xl/none font-bold font-syne text-white tracking-[2px] "
           >
-           Upgrade to video built with intention and strategy
+           Upgrade to video built with intention and strategy Planned, 
           </motion.h2>
 
           <motion.h2
@@ -80,7 +80,7 @@ export default function AnimatedParallaxSection() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
             className="text-2xl lg:text-3xl/none font-bold font-syne text-white tracking-[2px] "
           >
-            Planned, structured, and aligned with your business goals with us
+            structured, and aligned with your business goals with us
           </motion.h2>
         </div>
       </section>
@@ -119,41 +119,7 @@ export default function AnimatedParallaxSection() {
 
       <div className="border-[#ffffff0f] border-b-2 pt-4 max-w-4xl mx-auto"></div>
 
-      <div className="px-4 pt-16 text-center text-white bg-black sm:px-6 lg:px-8">
-        {/* Badge with animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          style={{ fontFamily: "'Syne', sans-serif" }}
-          className="inline-block text-sm font-semibold uppercase text-white tracking-[1px]  px-4 py-1 rounded-full mb-4"
-        >
-          Client Testimonials
-        </motion.div>
-
-        {/* Heading with animation */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          style={{ fontFamily: "'Syne', sans-serif" }}
-          className="text-3xl sm:text-4xl md:text-4xl font-sans font-semibold leading-tight bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
-        >
-          Hear what they’re
-        </motion.h2>
-
-        {/* Optional subtitle with delay */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          style={{ fontFamily: "'Syne', sans-serif" }}
-          className="text-3xl sm:text-4xl tracking-[1px] md:text-4xl/none pt-2 font-sans font-semibold  text-white "
-        >
-          {/* Optional subtitle text */}
-          Saying about us
-        </motion.div>
-      </div>
+     
     </div>
   );
 }
