@@ -241,12 +241,13 @@ export default function WorkWithUs() {
             className="flex flex-col gap-6 md:col-span-1"
           >
             <div className="rounded-[31px] p-8 md:p-10 flex flex-col gap-6 text-white" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-              <img
-                src="https://panze.co/wp-content/uploads/2024/09/Frame.svg"
+              {/* <img
+                // src="https://panze.co/wp-content/uploads/2024/09/Frame.svg"
+                src="/image/undraw_online-meetings_zutp-removebg-preview.png"
                 alt="Contact Form of Panze UX Design Studio"
                 className="w-full h-auto"
                 loading="lazy"
-              />
+              /> */}
 
               <h4 className="text-lg font-semibold leading-tight md:text-xl">
                 Meet the Team <span className="text-[#7EE0FF]"> Behind the Strategy</span>

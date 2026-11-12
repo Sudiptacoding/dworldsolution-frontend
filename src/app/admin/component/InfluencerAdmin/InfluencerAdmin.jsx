@@ -40,8 +40,34 @@ const InfluencerAdmin = () => {
   };
 
   // ✅ Upload image to imgbb
+  // const handleAvatarUpload = async () => {
+  //   if (!avatarFile) return formData.image; // যদি আগেই URL থাকে
+  //   const inputType = avatarFile.type.split("/")[1];
+  //   if (!["png", "jpeg", "jpg"].includes(inputType)) {
+  //     toast.error("Please upload a jpeg/png image");
+  //     return null;
+  //   }
+
+  //   const uploadData = new FormData();
+  //   uploadData.append("image", avatarFile);
+
+  //   try {
+  //     const res = await axios.post("https://api.imgbb.com/1/upload", uploadData, {
+  //       headers: { "Content-Type": "multipart/form-data" },
+  //       params: { key: "9d5e814c7c5f4867978ca6169e144b8b" },
+  //     });
+  //     return res.data.data.url;
+  //   } catch (error) {
+  //     console.error("Image upload error:", error.message);
+  //     toast.error("Image upload failed");
+  //     return null;
+  //   }
+  // };
+
+  // ✅ Upload image to Cloudinary (Permanent & Secure)
   const handleAvatarUpload = async () => {
     if (!avatarFile) return formData.image; // যদি আগেই URL থাকে
+    
     const inputType = avatarFile.type.split("/")[1];
     if (!["png", "jpeg", "jpg"].includes(inputType)) {
       toast.error("Please upload a jpeg/png image");
@@ -49,20 +75,27 @@ const InfluencerAdmin = () => {
     }
 
     const uploadData = new FormData();
-    uploadData.append("image", avatarFile);
+    uploadData.append("file", avatarFile);
+    
+    // আপনার ড্যাশবোর্ড থেকে পাওয়া Unsigned Upload Preset এর নাম
+    uploadData.append("upload_preset", "qaajdm6b"); 
 
     try {
-      const res = await axios.post("https://api.imgbb.com/1/upload", uploadData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        params: { key: "9d5e814c7c5f4867978ca6169e144b8b" },
-      });
-      return res.data.data.url;
+      const cloudName = "utb1wxrt"; // আপনার ক্লাউড নেম
+      const res = await axios.post(
+        `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+        uploadData
+      );
+      
+      // ব্যাকএন্ডে সেভ করার জন্য পার্মানেন্ট সিকিউর URL রিটার্ন করবে
+      return res.data.secure_url; 
     } catch (error) {
-      console.error("Image upload error:", error.message);
+      console.error("Image upload error:", error.response?.data || error.message);
       toast.error("Image upload failed");
       return null;
     }
   };
+
 
   // ✅ Add or Update influencer
   const handleSubmit = async (e) => {

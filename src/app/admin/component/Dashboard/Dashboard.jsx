@@ -9,6 +9,7 @@ import ContactAdmin from "../ContactAdmin/ContactAdmin";
 import InfluencerAdmin from "../InfluencerAdmin/InfluencerAdmin";
 import Traking from "../Traking/traking";
 import WeDo from "../wedo/Wedo";
+import CompanyLogo from "../companyLogo/companyLogo";
 
 
 
@@ -97,6 +98,7 @@ const Dashboard = () => {
                 // { name: "Daily Earn List", dropdownItems: ["Daily list"] },
                 { name: "Influencer", dropdownItems: [] },
                 { name: "Traking", dropdownItems: [] },
+                { name: "companyLogo", dropdownItems: [] },
               ].map((menu) => (
                 <li key={menu.name}>
                   <button
@@ -168,6 +170,7 @@ const Dashboard = () => {
             {activeComponent === "We Do" && <div> <WeDo></WeDo> </div>}
             {activeComponent === "Influencer" && <div> <InfluencerAdmin></InfluencerAdmin> </div>}
             {activeComponent === "Traking" && <div> <Traking></Traking> </div>}
+            {activeComponent === "companyLogo" && <div> <CompanyLogo></CompanyLogo> </div>}
 
 
           </div>

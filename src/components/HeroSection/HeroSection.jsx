@@ -155,6 +155,227 @@
 //   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68039af40f8de0d527df7ffd_channels4_profile%20(2).avif",
 // ];
 
+// "use client";
+
+// import { motion } from "framer-motion";
+// import Image from "next/image";
+// import Link from "next/link";
+// import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
+// import TiltController from "../TiltController/TiltController";
+// import useHeaderVideo from "@/hook/useHeaderVideo";
+// import { useState } from "react";
+
+
+// const clientImages = [
+//   "/image/logo4.png",
+//   "/image/logo8.png",
+//   "/image/logo5.jpg",
+//   "/image/logo3.png",
+//   "/image/logo66.png",
+// ];
+
+// export default function HeroSection() {
+//   const { isPending, error, headerVideo, refetch } = useHeaderVideo();
+//   const [hovered, setHovered] = useState(false);
+
+//   const defaultVideo = {
+//     thumbnail:
+//       "https://embed-ssl.wistia.com/deliveries/d70c018134211b2cef054003cd784398.webp?image_crop_resized=1920x1080",
+//     src: "https://www.youtube.com/embed/xVqZ6ZSeMW4?si=C0jmHz5yMCQE15kE",
+//   };
+
+//   const videoToRender =
+//     headerVideo && headerVideo?.src ? headerVideo : defaultVideo;
+
+// const textColors = [
+//     "#2563eb", // Blue
+//     "#9333ea", // Purple
+//     "#0891b2", // Cyan
+//     "#db2777", // Pink
+//     "#059669", // Emerald
+//     "#2563eb", // Loop-friendly repeat
+//   ];
+    
+
+//   return (
+
+//        <section className="relative flex flex-col items-center justify-start w-full min-h-screen px-4 overflow-hidden bg-black pt-28 pb-14 md:pt-40">
+//         <div className="max-w-7xl mx-auto w-full text-center text-[#a8aeb6] relative z-10">
+//           {/* ===== Text Area (with background circles) ===== */}
+//           <div className="relative flex flex-col items-center justify-center">
+//             <div className="absolute inset-0 flex items-center justify-center -z-10">
+//               <div
+//                 className="absolute lg:w-[880px] lg:h-[850px] w-[400px] h-[400px] rounded-full border-l border-r border-white/20
+//                opacity-0 animate-circle-1">
+//               </div>
+//               <div
+//                 className="absolute lg:w-[1080px] lg:h-[1080px] w-[600px] h-[600px] rounded-full border-l border-r border-white/20
+//                opacity-0 animate-circle-2">
+//               </div>
+//               <div
+//                 className="absolute lg:w-[1300px] lg:h-[1300px] w-[800px] h-[800px] rounded-full border-l border-r border-white/20
+//                opacity-0 animate-circle-3">
+//               </div>
+//             </div>
+//             {/* Header Text */}
+//             <motion.div
+//               initial={{ opacity: 0, y: 40 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.6 }}
+//               className="max-w-[60rem] mx-auto mb-1 text-center"
+//             >
+//               <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-[53px] !leading-[49px] ">
+//                Get More Leads Through Thoughtfully Planned Video And Social Media Content
+//               </h1>
+//             </motion.div>
+
+//             {/* Subtitle */}
+//             <motion.div
+//               initial={{ opacity: 0, y: 30 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.7, delay: 0.2 }}
+//               className="max-w-3xl mx-auto text-center"
+//             >
+
+
+//               {/* <p className="mt-4 text-lg text-gray-600">
+//                We support entrepreneurs and businesses with structured organic content workflows focused on clarity, consistency, and lead support. When raw footage isn’t available, video content can be created using AI-assisted workflows and refined through professional editing.
+//               </p> */}
+
+// <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+//       We support entrepreneurs and businesses with structured organic content workflows focused on clarity, consistency, and lead support. When raw footage isn’t available, video content can be created using{" "}
+//       <span className="relative inline-flex items-center justify-center mx-1">
+//         {/* পেছনের ডিপ ও সফট লাইট ব্লেন্ডিং (যা ফিক্সড থাকবে) */}
+//         <span className="absolute -inset-2 rounded-xl bg-blue-500/30 dark:bg-blue-400/20 blur-lg -z-10 animate-pulse"></span>
+
+//         {/* মূল AI টেক্সট: বড় ফন্ট, বোল্ড এবং অটোমেটিক কালার চেঞ্জিং */}
+//         <motion.span
+//           animate={{
+//             color: textColors,
+//           }}
+//           transition={{
+//             duration: 8,
+//             repeat: Infinity,
+//             ease: "easeInOut",
+//           }}
+//           className="relative text-2xl font-black tracking-wide px-1"
+//         >
+//           AI
+//         </motion.span>
+//       </span>
+//       -assisted workflows and refined through professional editing.
+//     </p>
+
+//             </motion.div>
+//             <motion.div
+//               initial={{ opacity: 0, y: 30 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.7, delay: 0.2 }}
+//               className="max-w-2xl mx-auto text-center"
+//             >
+//               <div
+//                 className="relative flex justify-center h-20 mt-6 cursor-pointer w-72"
+//                 onMouseEnter={() => setHovered(true)}
+//                 onMouseLeave={() => setHovered(false)}
+//               >
+//                 {clientImages.map((src, index) => {
+//                   const hoverOffset = hovered
+//                     ? (index - (clientImages.length - 1) / 2) * 10
+//                     : 0;
+//                   const zIndex = clientImages.length - index; // top image above
+//                   const initialOffset = index * 40; // slight initial X offset for visibility
+//                   return (
+//                     <motion.img
+//                       key={index}
+//                       src={src}
+//                       alt={`Client ${index + 1}`}
+//                       className="absolute object-cover w-16 h-16 border-2 border-white rounded-full shadow-md"
+//                       style={{
+//                         left: `calc(35% + ${initialOffset}px)`,
+//                         zIndex,
+//                       }}
+//                       animate={{
+//                         left: hovered
+//                           ? `calc(17% + ${initialOffset + hoverOffset}px)`
+//                           : `calc(17% + ${initialOffset}px)`,
+//                       }}
+//                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
+//                     />
+//                   );
+//                 })}
+//               </div>
+//             </motion.div>
+//             <motion.div
+//               initial={{ opacity: 0, y: 30 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.7, delay: 0.2 }}
+//               className="max-w-2xl mx-auto text-center"
+//             >
+//               <p className="mt-2 text-sm text-gray-500">
+//                 Trusted by 200+ global entrepreneurs and businesses
+//               </p>
+//             </motion.div>
+//             {/* Button */}
+//             {/* <motion.div
+//               initial={{ opacity: 0, y: 20 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8, delay: 0.4 }}
+//             >
+//               <div className="mt-6">
+//                 <Link href="#book-a-call"
+//                   className="inline-flex items-center gap-2 px-6 py-3 text-white bg-gray-900 rounded-lg shadow-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+//                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+//                     className="w-5 h-5 fill-white">
+//                     <path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path>
+//                   </svg>
+//                   Sign in with Google
+//                 </Link>
+//               </div>
+//             </motion.div> */}
+//           </div>
+
+//           {
+//             headerVideo ?      <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8, delay: 0.6 }}
+//             className="max-w-4xl mx-auto mt-20"
+//           >
+//             <TiltController customClass="flex flex-col items-center justify-center w-full h-full text-white transition-transform duration-500 ease-out shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
+//               <VideoThumbnail
+//                 thamnailURL={videoToRender?.thumbnail}
+//                 // VideoURL={"https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"}
+//                 VideoURL={videoToRender?.src}
+//               />
+//             </TiltController>
+//           </motion.div> :     <TiltController customClass="">  <div className="">
+//             <div className="relative w-full max-w-4xl mx-auto overflow-hidden transition duration-500 transform rounded-lg cursor-pointer hover:scale-105 ">
+
+//               <video
+//                 src="https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"
+//                 autoPlay
+//                 muted
+//                 loop
+//                 playsInline
+//                 className="object-contain w-full h-auto shadow-2xl rounded-2xl bg-black/5"
+//               >
+//                 Your browser does not support the video tag.
+//               </video>
+
+//             </div>
+//           </div></TiltController>
+//           }
+
+//         </div>
+//       </section>
+
+//   );
+// }
+
+
+
+
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -163,9 +384,11 @@ import Link from "next/link";
 import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
 import TiltController from "../TiltController/TiltController";
 import useHeaderVideo from "@/hook/useHeaderVideo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const clientImages = [
+// লোকাল ফলব্যাক ইমেজ
+const fallbackImages = [
   "/image/logo4.png",
   "/image/logo8.png",
   "/image/logo5.jpg",
@@ -176,6 +399,26 @@ const clientImages = [
 export default function HeroSection() {
   const { isPending, error, headerVideo, refetch } = useHeaderVideo();
   const [hovered, setHovered] = useState(false);
+  const [clientImages, setClientImages] = useState(fallbackImages);
+
+  // API থেকে লোগো ফেচ করা
+  useEffect(() => {
+    const fetchLogos = async () => {
+      try {
+        const res = await axios.get("https://dworldsolution-backend.vercel.app/company-logos");
+        if (res.data && Array.isArray(res.data) && res.data.length > 0) {
+          // API ডেটা থেকে শুধু logoUrl গুলো বের করে অ্যারে তৈরি করা
+          const apiLogos = res.data.map((item) => item.logoUrl);
+          setClientImages(apiLogos);
+        }
+      } catch (err) {
+        console.error("Failed to fetch company logos:", err);
+        // এরর আসলে ফলব্যাক ইমেজই থাকবে
+      }
+    };
+
+    fetchLogos();
+  }, []);
 
   const defaultVideo = {
     thumbnail:
@@ -185,6 +428,16 @@ export default function HeroSection() {
 
   const videoToRender =
     headerVideo && headerVideo?.src ? headerVideo : defaultVideo;
+
+  const textColors = [
+    "#2563eb", // Blue
+    "#9333ea", // Purple
+    "#0891b2", // Cyan
+    "#db2777", // Pink
+    "#059669", // Emerald
+    "#2563eb", // Loop-friendly repeat
+  ];
+    
 
   return (
 
@@ -225,9 +478,36 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <p className="mt-4 text-lg text-gray-600">
+
+
+              {/* <p className="mt-4 text-lg text-gray-600">
                We support entrepreneurs and businesses with structured organic content workflows focused on clarity, consistency, and lead support. When raw footage isn’t available, video content can be created using AI-assisted workflows and refined through professional editing.
-              </p>
+              </p> */}
+
+<p className="mt-4 text-lg text-gray-600 leading-relaxed">
+      We support entrepreneurs and businesses with structured organic content workflows focused on clarity, consistency, and lead support. When raw footage isn’t available, video content can be created using{" "}
+      <span className="relative inline-flex items-center justify-center mx-1">
+        {/* পেছনের ডিপ ও সফট লাইট ব্লেন্ডিং (যা ফিক্সড থাকবে) */}
+        <span className="absolute -inset-2 rounded-xl bg-blue-500/30 dark:bg-blue-400/20 blur-lg -z-10 animate-pulse"></span>
+
+        {/* মূল AI টেক্সট: বড় ফন্ট, বোল্ড এবং অটোমেটিক কালার চেঞ্জিং */}
+        <motion.span
+          animate={{
+            color: textColors,
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative text-2xl font-black tracking-wide px-1"
+        >
+          AI
+        </motion.span>
+      </span>
+      -assisted workflows and refined through professional editing.
+    </p>
+
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -277,27 +557,10 @@ export default function HeroSection() {
                 Trusted by 200+ global entrepreneurs and businesses
               </p>
             </motion.div>
-            {/* Button */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="mt-6">
-                <Link href="#book-a-call"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-white bg-gray-900 rounded-lg shadow-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
-                    className="w-5 h-5 fill-white">
-                    <path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path>
-                  </svg>
-                  Sign in with Google
-                </Link>
-              </div>
-            </motion.div> */}
           </div>
 
           {
-            headerVideo ?      <motion.div
+            headerVideo ?     <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -306,11 +569,10 @@ export default function HeroSection() {
             <TiltController customClass="flex flex-col items-center justify-center w-full h-full text-white transition-transform duration-500 ease-out shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
               <VideoThumbnail
                 thamnailURL={videoToRender?.thumbnail}
-                // VideoURL={"https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"}
                 VideoURL={videoToRender?.src}
               />
             </TiltController>
-          </motion.div> :     <TiltController customClass="">  <div className="">
+          </motion.div> :    <TiltController customClass="">  <div className="">
             <div className="relative w-full max-w-4xl mx-auto overflow-hidden transition duration-500 transform rounded-lg cursor-pointer hover:scale-105 ">
 
               <video
@@ -333,6 +595,14 @@ export default function HeroSection() {
 
   );
 }
+
+
+
+
+
+
+
+
 
 const teamImages = [
   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68039aedeb4bf0f0e7b3ab65_0x0.webp",

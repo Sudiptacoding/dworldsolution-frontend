@@ -158,21 +158,13 @@ function Footer() {
           {/* Bottom Made-by Section */}
           <div className="flex flex-col items-center justify-between gap-6 pb-10 md:flex-row">
             <div className="text-[12.5px] text-[#A0A0A0] font-normal leading-[1.5em]">
-              © 2026 dworldsolution | all rights reserved by dworldsolution
+              © 2027 dworldsolution | all rights reserved by dworldsolution
             </div>
 
             {/* Social Media Links */}
             <div className="flex gap-[30px]">
 
 
-            {/* Call Us */}
-  <a
-    href="tel:781-999-1222" // ডায়াল প্যাড ওপেন করার জন্য নাম্বারটি সেট করা হয়েছে
-    className="w-[20px] text-white inline-block transition-opacity duration-300 hover:opacity-70"
-    aria-label="Call Us"
-  >
-    <FaPhoneAlt size={18} className="w-full h-auto" />
-  </a>
 
   {/* Email Us */}
   <a

@@ -4,6 +4,7 @@ import Script from "next/script";
 import QueryProvider from "@/provider/QueryProvider";
 import CustomCursor from "@/common/CustomCursor/CustomCursor";
 import WhatsAppChatWidget from "@/components/WhatsAppFloat";
+import ScrollToTop from "@/common/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -127,6 +128,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased`}>
         <QueryProvider>
           <CustomCursor />
+          <ScrollToTop />
           {children}
           {/* Global Floating WhatsApp Chat Widget */}
           <WhatsAppChatWidget
