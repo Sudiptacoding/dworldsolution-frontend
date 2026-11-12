@@ -1070,26 +1070,33 @@ const payload = {
     setIsModalOpen(true);
   };
 
-  const handlePdfUpload = async (e) => {
+// PDF আপলোড হ্যান্ডলার (কোনো ব্যাকএন্ড সার্ভার বা লোকালহোস্ট লাগবে না, সরাসরি ব্রাউজারেই কনভার্ট হবে)
+  const handlePdfUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    const uploadData = new FormData();
-    uploadData.append("pdf", file);
+    // ভার্সেলের ম্যাক্সিমাম লিমিট ৪ এমবি
+    if (file.size > 4 * 1024 * 1024) {
+      alert("PDF size must be under 4MB!");
+      return;
+    }
 
     setIsUploading(true);
-    try {
-      const res = await axios.post("https://dworldsolution-backend.vercel.app/api/upload-pdf", uploadData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      // আপলোড হওয়া ব্যাকএন্ডের লিংকটি সরাসরি src-তে বসে যাবে
-      setFormData((prev) => ({ ...prev, src: res.data.url }));
-      alert("PDF uploaded successfully!");
-    } catch (error) {
-      alert("PDF upload failed!");
-    } finally {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      // PDF টি সরাসরি Base64 স্ট্রিং হয়ে src-তে বসে যাবে এবং MongoDB-তে সেভ হবে
+      setFormData((prev) => ({ ...prev, src: reader.result }));
       setIsUploading(false);
-    }
+      alert("PDF loaded successfully!");
+    };
+
+    reader.onerror = () => {
+      setIsUploading(false);
+      alert("Failed to read PDF file!");
+    };
+
+    reader.readAsDataURL(file);
   };
 
   return (
